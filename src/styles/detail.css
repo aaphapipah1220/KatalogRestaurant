@@ -1,0 +1,64 @@
+.restaurant {
+    margin: auto;
+    width: 85%;
+}
+
+.restaurant__poster {
+    width: 100%;
+}
+
+.restaurant__name {
+    width: 100%;
+    height: auto;
+    font-size: 65px;
+    background-color: rgb(217, 227, 236);
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.restaurant__description {
+    width: 80%;
+    margin: auto;
+}
+
+.restaurant h3 {
+    font-size: 44px;
+}
+
+.restaurant h4 {
+    font-size: 32px;
+}
+
+.restaurant p {
+    font-size: 28px;
+}
+
+button {
+    width: 50%;
+    height: 50px;
+    font-size: 32px;
+    margin-top: 30px;
+    margin: auto;
+    background-color: rgb(187, 235, 219);
+    color: black;
+    font-style: oblique;
+    text-align: center;
+}
+
+.menu {
+    width: 95%;
+    background-color: aliceblue;
+}
+
+.customer-reviews {
+    padding: 28px;
+    background-color: azure;
+    width: 100%;
+    margin: auto;
+}
+
+.content h1 {
+    font-size: 75px;
+}
