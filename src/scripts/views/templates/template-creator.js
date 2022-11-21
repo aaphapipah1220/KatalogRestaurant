@@ -39,7 +39,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
   <div class="customer-reviews">
   <h3>Customer Reviews</h3>
-  <ul>${restaurant.customerReviews.map((customerReview) => customerReview.review).join(' ')}</ul>
+  <ul>${restaurant.customerReviews.map((customerReview) => customerReview.review).join(' || ')}</ul>
   </div>
 `;
 
