@@ -30,11 +30,10 @@ class App {
     this._content.innerHTML = await page.render();
     await page.afterRender();
 
-    const skipToMainContent = document.querySelector('.skip-to-main-content');
-    skipToMainContent.addEventListener('keypress', (event) => {
-      if (event.key === 'Enter') {
-        document.querySelector('#maincontent').focus();
-      }
+    const skipLinkElem = document.querySelector('.skip-content');
+    skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#maincontent').focus();
     });
   }
 }
