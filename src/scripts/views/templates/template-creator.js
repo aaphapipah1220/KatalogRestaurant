@@ -3,9 +3,9 @@ import CONFIG from '../../globals/config';
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item__header">
-      <img class="restaurant-item__poster" alt="${restaurant.name}" src="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}" />
+      <img class="restaurant-item__poster lazyload" alt="${restaurant.name}" data-src="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}" />
       <div class="movie-item__content">
-        <h3><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
+        <h3 class="restaurant__title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
       </div>
       <div class="restaurant-item__rating">
         <p>${restaurant.city}</p>
@@ -19,7 +19,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <img class="restaurant__poster" src="${CONFIG.BASE_IMAGE_URL_LG + restaurant.pictureId}" alt="${restaurant.name}" />
+  <img class="restaurant__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL_LG + restaurant.pictureId}" alt="${restaurant.name}" />
   <h2 class="restaurant__name">${restaurant.name}</h2>
   <div class="restaurant__description">
     <h3>Desription</h3>
@@ -43,21 +43,21 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
 `;
 
-const createFavoriteButtonTemplate = () => `
-  <button aria-label="Add favorite this restaurant" id="favoriteButton" class="favorite">
-     Add to Favorite
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this restaurant" id="likeButton" class="like">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createUnfavoritedButtonTemplate = () => `
-  <button aria-label="unfavorite this restaurant" id="unfavoriteButton" class="unfavorite">
-    Unfavorite
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
 export {
   createRestaurantDetailTemplate,
   createRestaurantItemTemplate,
-  createFavoriteButtonTemplate,
-  createUnfavoritedButtonTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };
