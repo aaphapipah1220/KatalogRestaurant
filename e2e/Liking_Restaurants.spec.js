@@ -34,19 +34,21 @@ Scenario('liking one restaurant', async ({ I }) => {
 
 Scenario('unliking a restaurant', ({ I }) => {
   I.amOnPage('/');
+  I.wait(5);
   I.seeElement('.restaurant__title a');
-  I.click(locate('.restaurant-item a').first());
+  I.click(locate('.restaurant__title a').first());
+  I.wait(5);
   I.seeElement('#likeButton');
   I.click('#likeButton');
-
   I.amOnPage('/#/favorite');
-  I.seeElement('.restaurant-item a');
-  I.click(locate('restaurant-item a').first());
-
+  I.wait(5);
+  I.seeElement('.restaurant__title a');
+  I.click(locate('.restaurant__title a').first());
+  I.wait(5);
   I.seeElement('#likeButton');
   I.click('#likeButton');
-
   I.amOnPage('/#/favorite');
+  I.wait(5);
   I.dontSeeElement('restaurant-item');
   I.dontSeeElement('.restaurant__title a');
 });
